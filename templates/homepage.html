@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+  .card-slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: 100%;
+}
+
+.review-card {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.username {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.rating {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: aqua;
+  border-radius: 3rem;
+}
+
+.avatar img {
+    width: 100px; /* Adjust the width as per your preference */
+    height: 100px; /* Adjust the height as per your preference */
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .stars{
+    color: orange;
+    font-size: 1rem;
+  }
+  .review .review-slider{
+    border: 1px solid;
+    padding: 1rem;
+  }
+  .review .review-slider .box{
+    border: 0px solid red;
+    background-color: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+  }
+  .review .review-slider .box :hover{
+    box-shadow: 1px 1px 10px 4px var(--green);
+  }
+  .review .review-slider .box img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+  }
+  .review .review-slider .box p{
+    padding: 1rem 0;
+    line-height: 1.8;
+    color: var(--light-color);
+    font-size: 1.5rem;
+  }
+  .review .review-slider .box h3{
+    padding-bottom: .5rem;
+    color: var(--black);
+    font-size: 2.2rem;
+  }
+  .review .review-slider .box .stars i{
+    color: orange;
+    font-size: 1.7rem;
+  }
+  li{
+    list-style:none;
+  }
+   .footer-col{
+    color: aliceblue;
+  }
+    li a {
+  
+  color: rgb(8, 8, 8);
+   font-size:x-large;
+  text-align: center;
+  list-style:none !important;
+    }
+    .footer{
+  width:100%;
+  padding-top: 20px;
+  background-color:#161616;
+  color: aliceblue;
+}
+.container{
+  width:100% !important;
+}
+.footer-col a {
+  padding-top: 20px;
+    color: rgb(249, 249, 253); 
+  }
+    .ServiceBox:hover{
+        background-color: darkgrey;
+    }
+.img {
+width:80%;
+z-index: 0; }
+
+.text-over-img {
+z-index:1;
+font-size: 1.2em;
+margin-top: -100px;
+}
+div.gallery {
+  margin: 15px;
+  border: 1px solid #767579;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #1e10da;
+  border-radius: 2px;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+    .img-fluid {
+        box-shadow: 10px 10px 5px rgb(135, 137, 138);
+        border-radius: 7px; border: 6px solid black;"
+    }
+
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.inner_banner {
+  position: relative;
+}
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+@media(max-width:767px) {  /* Adjust the max-width as per your requirements */
+  .text-overlay{
+    font-size:15px !important; /* Change the font size to your desired value */
+  }
+}
+.rev-section{
+  margin: auto;
+  padding: 0 1rem;
+  max-width: 1100px;
+  text-align: center;
+}
+.title{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: rgb(50, rgb(12, 12, 12), rgb(5, 5, 5));
+  margin-bottom: .5rem;
+}
+.note{
+  font-size: 1.1rem;
+  color: #767579;
+  font-style: italic;
+}
+.reviews{
+  margin:2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.review{
+  margin: 0 1rem;
+  min-width: 300px;
+  flex: 1;
+}
+.head-review{
+  margin: 1.75rem auto;
+  width: 150px;
+  height: 150px;
+}
+.images{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgb(0,0, 0,.25);
+}
+.body-review{
+  background-color: rgb(249, 249, 253);
+  padding: 2.5rem;
+  box-shadow: 2px 2px 10px 3px rgb(249, 249, 253);
+}
+.name-review{
+  font-size: 1.5rem;
+  color: rgb(135, 137, 138);
+  margin-bottom: .25rem;
+}
+.place-review{
+  color: red;
+  font-style: italic;
+}
+.rating{
+  color: rgb(235, 178, 72);
+  margin: 1rem 0;
+}
+.desc-review{
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  color:#434244;
+}
+@media(max-width:678px){
+  .review{
+    margin-top: 1.5rem;
+  }
+}
+.card{
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+@media only screen and (max-width: 767px) {
+  #imgs1 {
+    margin-top: 5px; /* Adjust the value as per your requirement */
+  }
+}
+@media only screen and (max-width: 767px) {
+  #imgs2 {
+    margin-top: 5px; /* Adjust the value as per your requirement */
+  }
+}
+@media only screen and (max-width: 767px) {
+  #imgs3 {
+    margin-top: 5px; /* Adjust the value as per your requirement */
+  }
+}
+@media only screen and (max-width: 767px) {
+  #imgs4 {
+    margin-top: 5px; /* Adjust the value as per your requirement */
+  }
+}
+@media only screen and (max-width: 767px) {
+  #imgs5 {
+    margin-top: 5px; /* Adjust the value as per your requirement */
+  }
+}
+@media only screen and (max-width: 767px) {
+  #imgs6 {
+    margin-top: 5px; /* Adjust the value as per your requirement */
+  }
+}
+@media only screen and (max-width: 767px) {
+  #imgs7 {
+    margin-top: 5px; /* Adjust the value as per your requirement */
+  }
+}
+#more {display: none;}
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  display: inline-block;
+    margin-left: 18px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+ .flip-card img {
+    max-width: 100%;
+    height: auto;
+ }
+</style>
+
+  
+</script>
+<script>
+  function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    }
+  }
+  </script>
+  
+<body>
+    <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+<div>
+    <img src="https://previews.123rf.com/images/chekman/chekman1911/chekman191100666/133659741-house-icon-with-heart-vector-house-icon-black-home-icon-construction-concept.jpg" style="width: 50px; height: 50px; border-radius: 50%;" class="rounded">
+
+  </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav  ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'homes' %}" style="margin-right: 50px; color: aliceblue;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}" style="margin-right: 50px;; color: aliceblue;">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gal' %}" style="margin-right: 50px; color: aliceblue;">Interior Gallery</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'project' %}" style="margin-right: 50px; color: aliceblue;">Our Projects</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}"style="margin-right: 50px; color: aliceblue;">Contact Us</a>
+              </li>    
+          </ul>
+        </div>  
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="inner_banner">
+            <img src="https://evensconstruction.com/images/inner_banner_01.jpg" class="img-responsive" style="width:100%;" alt="Home Interior Services - Evens Construction Pvt Ltd" title="Home Interior Services - Evens Construction Pvt Ltd">
+            <div class="inner_banner_caption">    
+                <span class="text-overlay" style="font-size:xx-large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Sharpen Your Creativity   We Design Your Dreams</span><br>
+            </div>
+            </div>
+      </div>
+        </div><br><br><br>
+<div class="baner-botom-wraper">
+        	<div class="container">
+                <div class="baner-botom-right" style="width:100%;">
+                	
+                    <div class="home-txt">
+                        <img src="https://www.turnkeyconstructions.in/images/baner-btm-img.jpg"  style="width:330px;height:auto;float:left;margin-right:10px;margin-bottom:5px;">
+                            <h1>Home<br>
+                                <span>Constructions</span>                   	
+                                </h1>
+                    <p style="text-align: justify;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Turnkey Constructions is one of the top-ranked house construction companies based in Thodupuzha. We provide end-to-end villas, apartments, and independent 
+                    houses construction solutions. Being one of the best builders in Idukki, we are committed to designing and constructing unique and deluxe commercial and 
+                    residential projects based on your tastes, dream, and requirements. Our purpose is to build villas, apartments, and houses combining creativity and 
+                    fulfilling modern standards for your best life. <br><br>
+One of the leading builders in Thodupuzha, Turnkey Constructions constructs your dream home with the best design, top-quality procedures, and experienced architects. We present 
+all kinds of construction services based on the most modern concepts and low-budget yet stunning structures. One of the specialized and major construction 
+contractors in Thodupuzha, we construct affordable and luxurious commercial and residential projects with the most modern &amp; traditional designs, the highest quality standards, 
+and complete customer satisfaction.<br><br>
+Turnkey Constructions is one of the best construction companies that focus on redefining the construction industry with superior services, the highest standards of work ethic, 
+and adopting unique styles of construction techniques by emphasizing quality. We have a team of experts in the architecture, engineering, and construction field, which makes us 
+the top building contractors in the industry. With the rich experience in the house construction industry, we extend our exclusive villas, apartments, and commercial and 
+independent houses construction solutions to Pala, Idukki, and Muvattupuzha.</p><br><br>
+
+<div class="flip-card" id="flip">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="https://i0.wp.com/theconstructor.org/wp-content/uploads/2018/09/house-plan.jpeg?fit=553%2C380&ssl=1" alt="Avatar" style="width:300px;height:300px; border: 2px solid;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Architectural Designing</h1> 
+      <p>Qualified Architects in Thrissur Kerala - Design Your Dream We provide</p> 
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="https://cuttingedgeds.com/wp-content/uploads/2019/12/luxury-home-interiors-india.jpg" alt="Avatar" style="width:300px;height:300px;  border: 2px solid;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Interior Designing</h1> 
+      <p>Interior Designing Services by Top Rated Interior Designers in Thrissur</p> 
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="https://www.cadpro.com/wp-content/uploads/2017/06/Custom-Home-Building-Design-Software.png" alt="Avatar" style="width:300px;height:300px;  border: 2px solid;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Interior Designing</h1> 
+      <p>Interior Designing Services by Top Rated Interior Designers in Thrissur</p> 
+    </div>
+  </div>
+</div>
+<br>
+<p style="margin-top: 30px; text-align: justify; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">A trusted name in the house construction industry, Turnkey Constructions focuses on creating comfortable, aesthetic, and attention-grabbing houses that ensure peaceful living. 
+We better understand our clients’ needs and build houses on our client’s vision at highly competitive prices. Our professional and experienced project management specialists, 
+architects, engineers, quality control experts, designers, and construction personnel are committed to serving you anytime, meeting your deadline, and accomplishing your dreams 
+every time. Our inimitable services include designing, construction, interior design, and project management consultancy.<br><br>
+One of the best-in-class house construction companies, Turnkey Constructions stands as the perfect construction contractor if you are looking for the best contractors near me 
+or in and around Thodupuzha. We focus on maximum utilization of space and create spacious and comfortable homes in the best designs and styles. Innovative house constriction 
+solutions, complete customer satisfaction, experienced professionals, and timely completion of projects are the key reasons behind the success of our company.
+<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+<button onclick="myFunction()" id="myBtn" class="btn btn-dark">Read more</button></p>
+</div>
+                </div>
+            </div>
+<!-- <div class="row">
+    
+       
+   
+    
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="ServiceBox hvr-sweep-to-right"> <img src="https://evensconstruction.com/images/service-img-1.jpg" alt="Architectural Designing" title="Architectural Designing" class="img-responsive" style="padding-left: 20px;padding-top: 20px;">
+        <h4 style="padding-left: 10px; padding-top: 10px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Architectural Designing</h4>
+        <p style="padding-left: 10px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> Qualified Architects in Thrissur Kerala - Design Your Dream We provide</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="ServiceBox hvr-sweep-to-right"> <img src="https://evensconstruction.com/images/service-img-2.jpg" alt="Interior Designing" title="Interior Designing" class="img-responsive" style="padding-left: 20px;padding-top: 20px;">
+        <h4 style="padding-left: 10px; padding-top: 10px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Interior Designing</h4>
+        <p style="padding-left: 10px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> Interior Designing Services by Top Rated Interior Designers in Thrissur</p>
+      </div>
+    </div>
+    
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="ServiceBox hvr-sweep-to-right"> <img src="https://evensconstruction.com/images/service-img-3.jpg" alt="Turnkey Construction" title="Turnkey Construction" class="img-responsive" style="padding-left: 20px;padding-top: 20px;">
+        <h4 style="padding-left: 10px; padding-top: 10px;">Turnkey Construction</h4>
+        <p style="padding-left: 10px;"> Turnkey Construction in Thrissur - Evens Construction Pvt Ltd In Turnkey</p>
+      </div>
+    </div> 
+  </div>
+</div>
+</div>  -->
+
+<section id="facts" class="facts-area bg-dark">
+  <div class="container">
+    <div class="facts-wrapper">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 ts-facts">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="https://demo.themefisher.com/constra/images/icon-image/fact1.png" alt="facts-img" style="margin-left: 100px;padding-top:10px;">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" style="color: #fff;margin-left: 100px;"><span class="counterUp" data-count="1789">1789</span></h2>
+                <h3 class="ts-facts-title" style="color: rgb(231, 231, 227);margin-left: 100px;">Projects</h3>
+              </div>
+          </div><!-- Col end -->
+
+          <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-sm-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="https://demo.themefisher.com/constra/images/icon-image/fact2.png" alt="facts-img" style="margin-left: 100px;padding-top:10px;">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" style="color: #fff;margin-left: 100px;"><span class="counterUp" data-count="647">647</span></h2>
+                <h3 class="ts-facts-title" style="color: #fff;margin-left: 100px;"> Members</h3>
+              </div>
+          </div><!-- Col end -->
+
+          <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="https://demo.themefisher.com/constra/images/icon-image/fact3.png" alt="facts-img" style="margin-left: 100px;padding-top:10px;">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" style="color: #fff;margin-left: 100px;"><span class="counterUp" data-count="4000">4000</span></h2>
+                <h3 class="ts-facts-title" style="color: #fff;margin-left: 100px;">Hours</h3>
+              </div>
+          </div><!-- Col end -->
+
+          <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="https://demo.themefisher.com/constra/images/icon-image/fact4.png" alt="facts-img" style="margin-left: 100px;padding-top:10px;">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" style="color: #fff; margin-left: 100px;"><span class="counterUp" data-count="44">44</span></h2>
+                <h3 class="ts-facts-title" style="color: #fff;margin-left: 100px;">Countries</h3>
+              </div>
+          </div><!-- Col end -->
+
+        </div> <!-- Facts end -->
+    </div>
+    <!--/ Content row end -->
+  </div>
+  <!--/ Container end -->
+</section>
+
+
+
+<div>
+    <h2 style="text-align: center; margin-top: 50px;">RESIDENTAIL PROJECTS</h2>
+</div>
+<div class="container-fluid cnt" style="margin-top:40px">
+    <div class="row">
+       <div class="col-sm-3 col-md-3 col-xs-12">
+             <div class="pack-1">
+                 <div><a href="" target="_blank"><img src="https://www.scaleandpencil.com/images/blog/10/best-home-designs-kollam.jpg" class="img-fluid" style="box-shadow: 10px 10px 5px rgb(135, 137, 138);" id="imgs"></a></div>
+                    <div class="botmp-div" style="background-color: #767579; color: aliceblue; text-align: center;">
+                      <span>3 FLOOR 5 BHK</span>
+                     </div>
+                </div>
+    
+            </div>
+            <div class="col-xs-12 col-md-3 col-sm-3">  <div class="pack-1">
+                                   <div><a href="" target="_blank"><img src="https://www.scaleandpencil.com/images/blog/kerala-house-design-kochi-ernakulam-kerala.jpg" class="img-fluid" id="imgs1"></a></div>
+                                   <div class="botmp-div" style="background-color: #767579; color: aliceblue; text-align: center;">
+                                     <span>3 FLOOR 4 BHK</span>
+                                   </div>
+                                  </div>
+                                </div>
+                                <div class="col-xs-12 col-md-3 col-sm-3">  <div class="pack-1">
+                                   <div><a href="" target="_blank"><img src="https://2.bp.blogspot.com/-rrfeIU-TZEM/XivpCHh0vsI/AAAAAAABV8s/xZjmwJc4PxoomKeyzou5l2Pah587z8YZQCNcBGAsYHQ/s1600/outstanding-kerala-home.jpg" class="img-fluid" id="imgs2"></a></div>
+                                   <div class="botmp-div" style="background-color: #767579; color: aliceblue; text-align: center;">
+                                     <span>2 FLOOR 4 BHK</span>
+                                   </div>
+                                  </div>
+                                </div>
+                                 <div class="col-xs-12 col-md-3 col-sm-3">  <div class="pack-1">
+                                   <div><a href="" target="_blank"><img src="https://i.ytimg.com/vi/y9GETFY9Ymk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGEIgZShLMA8=&rs=AOn4CLDN5D49pYwcufvYiL3a-J1lCcqxxA" id="imgs3" class="img-fluid"></a></div>
+                                   <div class="botmp-div" style="background-color: #767579; color: aliceblue; text-align: center;">
+                                     <span>2 FLOOR 4 BHK</span>
+                                   </div>
+                                  </div>
+                                </div>
+    </div>
+    <div class="row" style="margin-top:2%;margin-bottom:2%">
+                <div class="col-xs-12 col-md-3 col-sm-3">  <div class="pack-1">
+                                   <div><a href="" target="_blank"><img src="https://www.keralahouseplanner.com/wp-content/uploads/2012/12/beautiful-kerala-home-at-1650-sq.ft_.jpg"class="img-fluid" id="imgs4"></a></div>
+                                   <div class="botmp-div" style="background-color: #767579; color: aliceblue; text-align: center;">
+                                     <span>2 FLOOR 5 BHK</span>
+                                   </div>
+                                  </div>
+                                </div>
+                                 <div class="col-xs-12 col-md-3 col-sm-3">  <div class="pack-1">
+                                   <div><a href="" target="_blank"><img src="https://www.scaleandpencil.com/images/blog/29/small-house-designs-plan-kochi-ernakulam-kerala.jpg" class="img-fluid" id="imgs5"></a></div>
+                                   <div class="botmp-div" style="background-color: #767579; color: aliceblue; text-align: center;">
+                                     <span>2 FLOOR 4 BHK</span>
+                                   </div>
+                                  </div>
+                                </div>
+                                 <div class="col-xs-12 col-md-3 col-sm-3">  <div class="pack-1">
+                                   <div><a href="" target="_blank"><img src="https://www.scaleandpencil.com/images/blog/contemporary-home-design-kochi-ernakulam-kerala.jpg"class=img-fluid id="imgs6"></a></div>
+                                   <div class="botmp-div"style="background-color: #767579; color: aliceblue; text-align: center;">
+                                     <span>2 FLOOR 5 BHK</span>
+                                   </div>
+                                  </div>
+                                </div>
+                                 <div class="col-xs-12 col-md-3 col-sm-3">  <div class="pack-1">
+                                   <div><a href="" target="_blank"><img src="https://www.scaleandpencil.com/images/blog/3/contemporary-home-design-kochi-kerala.jpg"class=img-fluid id="imgs7"></a></div>
+                                   <div class="botmp-div" style="background-color: #767579; color: aliceblue; text-align: center;">
+                                     <span>2 FLOOR 4 BHK</span>
+                                   </div>
+                                  </div>
+                                </div>
+          
+    </div>
+
+    <section class="container-fluid ">
+      <div class="row">
+        <h1 style="text-align: center;">Our Clients</h1>
+        <div class="js-listing-details-white-bar"> 
+          <div class="js-listing-details-black-bar"> </div>
+        </div>
+        </div>
+      <div id="swiper-container" class="card-slider-container">
+        <div class="swiper-wrapper">
+          <!-- Review Cards -->
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80" alt="User Avatar">
+              </div>
+              <h3 class="username">Megha</h3>
+              <p class="review">Escrow Model Payment on stage completion. No contractor Delay & On-time Project Delivery.</p>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+    
+              </div>            </div>
+          </div>
+          <!-- Repeat the above swiper-slide element 9 more times -->
+          <!-- Example -->
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80" alt="User Avatar">
+              </div>
+              <h3 class="username">Daniel Joe</h3>
+              <p class="review">Escrow Model Payment on stage completion. No contractor Delay & On-time Project Delivery.</p>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+    
+              </div>             </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="avatar">
+                <img src="https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=0hb44OrI" alt="User Avatar">
+              </div>
+              <h3 class="username">Angel dzoza</h3>
+              <p class="review">Escrow Model Payment on stage completion. No contractor Delay & On-time Project Delivery.</p>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+    
+              </div>             </div>
+          </div>
+          
+          
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="avatar">
+                <img src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=612x612&w=0&k=20&c=eU56mZTN4ZXYDJ2SR2DFcQahxEnIl3CiqpP3SOQVbbI=" alt="User Avatar">
+              </div>
+              <h3 class="username">John Brittas</h3>
+              <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+              <span class="rating pl-3 pr-3">4.8</span>
+            </div>
+          </div>
+          
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+    
+    
+    
+    </section>
+    
+     <script>
+      var swiper = new Swiper('#swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        }
+      });
+    
+    </script>
+  <!-- Review -->
+  <!-- <section class="review" id="review">
+    <h1 class="heading"> Customers<span>Review</span></h1>
+    <div class="swiper review-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide box">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80" width="100" height="100">
+          <p>In Turnkey Project, it is our obligation to complete the project according to pre-specified criteria for a price that is fixed at the time the contract is signed. The process includes visit the site, evaluate the site suitability for construction,</p>
+          <h3>John Deo</h3>
+          <div class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half"></i>
+
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" width="100" height="100">
+          <p>In Turnkey Project, it is our obligation to complete the project according to pre-specified criteria for a price that is fixed at the time the contract is signed. The process includes visit the site, evaluate the site suitability for construction,</p>
+          <h3>John Deo</h3>
+          <div class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half"></i>
+
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4r0ytKMV3BhUqvW6NV_jd25gz_fSX6ioCw03Y_gdnyg&s" width="100" height="100">
+          <p>In Turnkey Project, it is our obligation to complete the project according to pre-specified criteria for a price that is fixed at the time the contract is signed. The process includes visit the site, evaluate the site suitability for construction,</p>
+          <h3>John Deo</h3>
+          <div class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half"></i>
+
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-614810.jpg&fm=jpg" width="100" height="100">
+          <p>In Turnkey Project, it is our obligation to complete the project according to pre-specified criteria for a price that is fixed at the time the contract is signed. The process includes visit the site, evaluate the site suitability for construction,</p>
+          <h3>John Deo</h3>
+          <div class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half"></i>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>  -->
+
+  <!-- <div class="reviews">
+    <div class="review">
+      <div class="head-review">
+        <img src="https://st.depositphotos.com/1269204/1219/i/600/depositphotos_12196477-stock-photo-smiling-men-isolated-on-the.jpg"width="150px" class="images">
+      </div>
+<div class="body-review">
+  <div class="nameve-review">Nathan D</div>
+  <div class="place-review">Germany</div>
+  <div class="rating"></div>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star-half"></i>
+</div>
+<div class="des-review">
+  Moreover, it got several attractive features like hero header with slider, hover effects, sticky top navigation bar, slide-in effects, fun fact counters, tabbed content, testimonial carousel, blog section, and many others. 
+</div>
+    </div>
+
+  </div>
+
+  <div class="reviews">
+    <div class="review">
+      <div class="head-review">
+        <img src="https://st.depositphotos.com/1269204/1219/i/600/depositphotos_12196477-stock-photo-smiling-men-isolated-on-the.jpg"width="150px"  class="images">
+      </div>
+<div class="body-review">
+  <div class="nameve-review">Nathan D</div>
+  <div class="place-review">Germany</div>
+  <div class="rating"></div>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star-half"></i>
+</div>
+<div class="des-review">
+  Moreover, it got several attractive features like hero header with slider, hover effects, sticky top navigation bar, slide-in effects, fun fact counters, tabbed content, testimonial carousel, blog section, and many others. 
+</div>
+    </div>
+
+  </div>
+ -->
+
+
+    <footer class="footer" style="margin-top: 10px;">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4 style="margin-left: 30px;">Company</h4>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Interior Gallery</a></li>
+              <li><a href="">Our Projects</a></li>
+              <li><a href="">Contacts</a></li>
+            </ul>
+          </div> 
+          <div class="footer-col">
+            <h4 style="margin-left: 30px;">Our Services</h4>
+            <ul>
+              <li><a href="">Architectural Designing</a></li>
+              <li><a href="">Interior Designing</a></li>
+              <li><a href="">Turkey Construction</a></li>
+              <li><a href="">Home & Office Interior Designers &</a></li>
+              <li><a href="">Best Interior Firms In Calicut,</a></li>
+              <li><a href="">Malappuram</a></li>
+
+            </ul>
+          </div> 
+          <div class="footer-col">
+            <h4 style="margin-left: 30px;">Contact Details</h4>
+            <ul>
+              <li style="list-style:none;">EVENS Construction (P) LTD.</li>
+                <li>Aisha Building, Irinjalakuda,</li>
+                <li>Thrissur , Kerala - India</li>
+                <li>Tel: 0091- 480 - 2833738</li>
+                <li>Mob: 8086600066, 8086611166</li>
+                <li>E-mail: info@evensconstruction.com</li>
+                
+                <li>Evens Construction Pvt Ltd GPS</li>
+            </ul>
+          </div> 
+          <div class="footer-col">
+            <h4 style="margin-left: 30px;">Follow Us</h4>
+            <div class="social-links" style="margin-left: 30px;">
+              <a href=""><i class="fab fa-facebook"></i></a>
+              <a href=""><i class="fab fa-twitter"></i></a>
+              <a href=""><i class="fab fa-instagram"></i></a>
+              <a href=""><i class="fab fa-linkedin-in"></i></a>
+              <div style="margin-left: 20px;">
+</div>                
+</div>
+          </div> 
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

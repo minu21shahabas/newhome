@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>    <title>Document</title>
+</head>
+<style>
+   li{
+    list-style:none;
+  }
+   .footer-col{
+    color: aliceblue;
+  }
+    li a {
+  
+  color: rgb(8, 8, 8);
+   font-size:x-large;
+  text-align: center;
+  list-style:none !important;
+    }
+    .footer{
+  width:100%;
+  padding-top: 20px;
+  background-color:#161616;
+  color: aliceblue;
+}
+.container{
+  width:100% !important;
+}
+.footer-col a {
+  padding-top: 20px;
+    color: rgb(249, 249, 253); 
+  }
+    @media(max-width:767px){
+      img{
+        height: 250px;
+        width:359px;
+        object-fit: cover;
+      }
+    }
+    .card{
+        background-color: rgb(240, 240, 231);
+        height: 450px;
+    }
+    
+    .img-responsive{
+      display: block;
+    max-width: 100%;
+    height: auto;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+        <div>
+            <img src="https://previews.123rf.com/images/chekman/chekman1911/chekman191100666/133659741-house-icon-with-heart-vector-house-icon-black-home-icon-construction-concept.jpg" style="width: 50px; height: 50px; border-radius: 50%;" class="rounded">
+        </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav ml-auto" >
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'homes' %}" style="margin-right: 70px; color: aliceblue;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'about' %}" style="margin-right: 70px; color: aliceblue;">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'gal' %}" style="margin-right: 70px;color: aliceblue;">Interior Gallery</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'project' %}" style="margin-right: 70px; color: aliceblue;">Our Projects</a>
+                      </li> 
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}"style="margin-right: 70px;color: aliceblue;">Contact Us</a>
+                      </li>    
+                  </ul>
+                </div>  
+              </nav>
+              <div>
+                <img src="https://images.squarespace-cdn.com/content/v1/579a83d8725e25911c5535d2/1625762388692-YK2BKLALOJZ2D03PUWVU/Alexander+House+-+Sunset+Time-Lapse-high.gif?format=1000w" width="1366" height="400">
+              </div>
+              <div>
+                <h1 style="text-align: center;margin-top: 40px;">OUR PROJECTS</h1>
+              </div>
+
+              <div class="card-group mb-3">
+                <div class="card mr-3" >
+                  <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2023/02/sudheesh.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                  <div class="card-body">
+                    <p class="card-text"><b>Client Name: Sudheesh<br>
+                        Location: Puthenchira,Thrissur<br>
+                        Area: 2000/- sq ft.</b> 
+                      </div>
+                      <div>
+                        <button type="button" class="btn btn-dark" style="margin-left: 170px; margin-top: 20px;"><a href="{% url 'more1' %}" style="text-decoration: none; color: antiquewhite;" >More</a></button></p>
+                      </div>
+                </div>
+                <div class="card mr-3" >
+                    <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2023/02/ELEVATION-011111.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                    <div class="card-body">
+                      <p class="card-text"><b>Client Name: Binji Biju<br>
+                        Location: Rappal, Thrissur<br>
+                        Area: 2900 Sq. Ft.</b>
+                      </div>
+                      <div>
+                        <button type="button" class="btn btn-dark" style="margin-left: 170px; margin-top: 20px;"><a href="{% url 'more1' %}" style="text-decoration: none; color: antiquewhite;" >More</a></button></p>
+                      </div>
+                  </div>
+                  <div class="card mr-3" >
+                    <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2023/02/ELEVATION-EDIT-11.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                    <div class="card-body">
+                      <p class="card-text"><b>Client Name: George<br>
+                        Location: Puthukkad, Thrissur<br>
+                        Area: 2800 Sq. Ft.</b></p>
+                      </div>
+                      <div>
+                        <button type="button" class="btn btn-dark" style="margin-left: 170px; margin-top: 20px;"><a href="{% url 'more1' %}" style="text-decoration: none; color: antiquewhite;" >More</a></button></p>
+                      </div>
+                  </div>
+            </div>
+            <div class="card-group mb-3">
+                <div class="card mr-3" >
+                  <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2023/02/antonry.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                  <div class="card-body">
+                    <p class="card-text"><b>Client Name: Antony<br>
+                        Location: Ondipudur, Coimbatore<br>
+                        Area: 2600 Sq. Ft.</b></p>
+                      </div>
+                      <div>
+                        <button type="button" class="btn btn-dark" style="margin-left: 170px; margin-top: 20px;"><a href="{% url 'more1' %}" style="text-decoration: none; color: antiquewhite;" >More</a></button></p>
+                      </div>
+                </div>
+                <div class="card mr-3" >
+                    <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2023/02/new-elevation-scaled.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                    <div class="card-body">
+                      <p class="card-text"><b>Client Name: Sandra Mandoza<br>
+                        Location: Ettimadai, Coimbatore<br>
+                        Area: 7000 Sq. Ft.</b></p>
+                      </div>
+                      <div>
+                        <button type="button" class="btn btn-dark" style="margin-left: 170px; margin-top: 20px;"><a href="{% url 'more1' %}" style="text-decoration: none; color: antiquewhite;" >More</a></button></p>
+                      </div>
+                  </div>
+                  <div class="card mr-3" >
+                    <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2021/01/Mukundan.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                    <div class="card-body">
+                      <p class="card-text"><b>Client Name: Mukundan<br>
+                        Location: Kaipamangalam, Thrissur<br>
+                        Area: 3400 Sq. Ft.</b></p>
+                      
+                      </div>
+                      <div>
+                        <button type="button" class="btn btn-dark" style="margin-left: 170px; margin-top: 20px;"><a href="{% url 'more1' %}" style="text-decoration: none; color: antiquewhite;" >More</a></button></p>
+                      </div>
+                  </div>
+            </div>
+            <div class="card-group mb-3">
+                <div class="card mr-3" >
+                  <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2021/01/04-1.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                  <div class="card-body">
+                    <p class="card-text"><b>Client Name: Johnson<br>
+                        Location: Karunagappilly, Kollam<br>
+                        Area: 5300 Sq. Ft.</b></p>
+                  </div>
+                  
+                </div>
+                <div class="card mr-3" >
+                    <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2021/01/abdul_jamal.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                    <div class="card-body">
+                      <p class="card-text"><b>Client Name: Abdul Jamal<br>
+                        Location: Irinjalakuda, Thrissur<br>
+                        Area: 2400 Sq. Ft</b></p>
+                    </div>
+                  </div>
+                  <div class="card mr-3" >
+                    <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2021/01/Lohi.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                    <div class="card-body">
+                      <p class="card-text"><b>Client Name : Lohidhakshan<br>
+                        Location: Ndavarambau, Thrissur<br>
+                        Area: 3300 sq ft.</b></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="card-group mb-3">
+                <div class="card mr-3" >
+                  <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2019/11/3D_elevation_small-1.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                  <div class="card-body">
+                    <p class="card-text"><b>Client : Rubby Sunil<br>
+                        Location: Kalamury, Thrissur<br>
+                        Area: 3018</b></p>
+                  </div>
+                </div>
+                <div class="card mr-3" >
+                    <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2021/01/abdul_jamal.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                    <div class="card-body">
+                      <p class="card-text"><b>Client : Sebastian<br>
+                        Location: Karukutty - Ernakulam<br>
+                        Area: 5359 Sq. Ft.</b></p>
+                    </div>
+                  </div>
+                  <div class="card mr-3" >
+                    <img class="card-img-top img-fluid" src="https://evensconstruction.com/wp-content/uploads/2019/11/3D_elevation_small-8.jpg" alt="Card image cap" style="width: 450px; height: 300px;padding-left: 10px; padding-top: 10px;padding-right: 10px;">
+                    <div class="card-body">
+                      <p class="card-text"><b>Client : Sreejith<br>
+                        Location: Chettuva - Thrissur<br>
+                        Area: 3500 Sq. Ft.</b></p>
+                    </div>
+                  </div>
+            </div>
+
+
+
+            <footer class="footer">
+              <div class="container">
+                <div class="row">
+                  <div class="footer-col">
+                    <h4 style="margin-left: 30px;">Company</h4>
+                    <ul>
+                      <li><a href="">Home</a></li>
+                      <li><a href="">About Us</a></li>
+                      <li><a href="">Interior Gallery</a></li>
+                      <li><a href="">Our Projects</a></li>
+                      <li><a href="">Contacts</a></li>
+                    </ul>
+                  </div> 
+                  <div class="footer-col">
+                    <h4 style="margin-left: 30px;">Our Services</h4>
+                    <ul>
+                      <li><a href="">Architectural Designing</a></li>
+                      <li><a href="">Interior Designing</a></li>
+                      <li><a href="">Turkey Construction</a></li>
+                      <li><a href="">Home & Office Interior Designers &</a></li>
+                      <li><a href="">Best Interior Firms In Calicut,</a></li>
+                      <li><a href="">Malappuram</a></li>
+        
+                    </ul>
+                  </div> 
+                  <div class="footer-col">
+                    <h4 style="margin-left: 30px;">Contact Details</h4>
+                    <ul>
+                      <li style="list-style:none;">EVENS Construction (P) LTD.</li>
+                        <li>Aisha Building, Irinjalakuda,</li>
+                        <li>Thrissur , Kerala - India</li>
+                        <li>Tel: 0091- 480 - 2833738</li>
+                        <li>Mob: 8086600066, 8086611166</li>
+                        <li>E-mail: info@evensconstruction.com</li>
+                        
+                        <li>Evens Construction Pvt Ltd GPS</li>
+                    </ul>
+                  </div> 
+                  <div class="footer-col">
+                    <h4 style="margin-left: 30px;">Follow Us</h4>
+                    <div class="social-links" style="margin-left: 30px;">
+                      <a href=""><i class="fab fa-facebook"></i></a>
+                      <a href=""><i class="fab fa-twitter"></i></a>
+                      <a href=""><i class="fab fa-instagram"></i></a>
+                      <a href=""><i class="fab fa-linkedin-in"></i></a>
+                      <div style="margin-left: 20px;">
+        </div>                
+        </div>
+                  </div> 
+                </div>
+              </div>
+            </footer>
+</body>
+</html>

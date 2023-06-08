@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+     li{
+    list-style:none;
+  }
+   .footer-col{
+    color: aliceblue;
+  }
+    li a {
+  
+  color: rgb(8, 8, 8);
+   font-size:x-large;
+  text-align: center;
+  list-style:none !important;
+    }
+    .footer{
+  width:100%;
+  padding-top: 20px;
+  background-color:#161616;
+  color: aliceblue;
+}
+.container{
+  width:100% !important;
+}
+.footer-col a {
+  padding-top: 20px;
+    color: rgb(249, 249, 253); 
+  }
+    @media(max-width:767px){
+      img{
+        height: 250px;
+        width:335px;
+        object-fit: cover;
+      }
+    }
+    .image:hover{
+      transform: scaleX(-1);
+    }
+    .inner_banner {
+  position: relative;
+}
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+@media(max-width:767px) {  /* Adjust the max-width as per your requirements */
+  .text-overlay{
+    font-size:15px !important; /* Change the font size to your desired value */
+  }
+}
+/* Three columns side by side */
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 30%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+        <div>
+            <img src="https://previews.123rf.com/images/chekman/chekman1911/chekman191100666/133659741-house-icon-with-heart-vector-house-icon-black-home-icon-construction-concept.jpg" style="width: 50px; height: 50px; border-radius: 50%;" class="rounded">
+        </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav ml-auto" >
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'homes' %}" style="margin-right: 50px; color: aliceblue;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'about' %}" style="margin-right: 50px; color: aliceblue;">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'gal' %}" style="margin-right: 50px;color: aliceblue;">Interior Gallery</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'project' %}" style="margin-right: 50px; color: aliceblue;">Our Projects</a>
+                      </li> 
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}"style="margin-right: 50px;color: aliceblue;">Contact Us</a>
+                      </li>    
+                  </ul>
+                </div>  
+              </nav>
+              <div class="container-fluid">
+                <div class="row">
+                    <div class="inner_banner">
+                    <img src="https://evensconstruction.com/images/inner_banner_01.jpg" class="img-responsive" style="width:100%;" alt="Home Interior Services - Evens Construction Pvt Ltd" title="Home Interior Services - Evens Construction Pvt Ltd">
+                    <div class="inner_banner_caption">    
+                        <span class="text-overlay" style="font-size:xx-large;">Sharpen Your Creativity   We Design Your Dreams</span><br>
+                    </div>
+                    </div>
+              </div>
+                </div><br><br><br>
+              <div>
+                <h1 style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top: 0px;">About Us</h1>
+              </div>
+     <div class="container">
+        <div class="row">
+            <div class="col sm-4">
+                <img src="https://evensconstruction.com/images/about_us.jpg" style="margin-top: 40px;">
+            </div>
+            <div class="col sm-4">
+              <p style="text-align: justify; margin-top: 40px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large;">Last updated on June 27th, 2022 at 08:15 am
+
+                Evens Construction is a Private Limited organization controlled by well experienced young and dynamic partners. We undertake contract works in Kerala for building construction and our group of professionals are providing home building services to customers for over 10 years. Our focus has been to provide the finest & most comprehensive residential and commercial construction services. We are engaged in designing of modern houses and apartments, repair and renovation contracts, prepare plans & building estimation.
+                
+                We also undertake interior design, decoration, landscaping etc. for villas and bungalows. The company obligate to meet client's requirement up to their maximum satisfaction. Our expertise team works with the land owners to prepare custom design for any construction project.</p>
+            </div>
+
+        </div>
+
+     </div>           
+     <h2 style="text-align: center; margin-top: 30px;">About Home Construction Pvt Ltd</h2>
+   
+     <div class="AboutWrap">
+      <div class="container">
+        <div class="row">
+              <div class="col-md-8 col-sm-12 col-xs-12">
+            <p class="last-updated" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: large; margin-top: 30px; text-align: justify;">Last updated on March 30th, 2021 at 10:15 am</p><p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: large; text-align: justify;">
+      Evens Construction is a Private Limited organization controlled by well experienced young and dynamic partners. We undertake contract works in Kerala for building construction and our group of professionals are providing home building services to customers for over 10 years. Our focus has been to provide the finest &amp; most comprehensive residential and commercial construction services. We are engaged in designing of modern houses and apartments, repair and renovation contracts, prepare plans &amp; building estimation.
+    </p>
+    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: large; text-align: justify;">
+      We also undertake interior design, decoration, landscaping etc. for villas and bungalows. The company obligate to meet client&#39;s requirement up to their maximum satisfaction. Our expertise team works with the land owners to prepare custom design for any construction project.</p>
+          </div>
+          
+          <div class="col-md-4 col-sm-12 col-xs-12"> 
+            <img src="https://images.pond5.com/under-construction-background-hd-definition-footage-087404002_iconl.jpeg" style="margin-top: 40px; margin-right: 40px;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="team">
+      <div class="container">
+          <div class="section-header text-center">
+              <h2>Meet Our Engineer</h2>
+          </div>
+          <div class="row" style="margin-top: 30px;">
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="team-item">
+                      <div class="team-img">
+                          <img src="https://themewagon.github.io/builerz/img/team-1.jpg" alt="Team Image" style="border: 2px solid black; width: 250px; height: 300px;" class="image">
+                      </div>
+                        <div class="team-text">
+                            <h4 style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Adam Phillips</h4>
+                            <p style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">CEO & Founder</p>
+                        </div>
+                      
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="team-item">
+                      <div class="team-img">
+                          <img src="https://themewagon.github.io/builerz/img/team-2.jpg" style="border: 2px solid black; width: 250px; height: 300px;" alt="Team Image" class="image">
+                      </div>
+                      <div class="team-text">
+                          <h4 style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Dylan Adams</h4>
+                          <p style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Civil Engineer</p>
+                      </div>
+                      
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="team-item">
+                      <div class="team-img">
+                          <img src="https://themewagon.github.io/builerz/img/team-3.jpg" alt="Team Image" style="border: 2px solid black; width: 250px; height: 300px;" class="image">
+                      </div>
+                      <div class="team-text">
+                          <h4 style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Jhon Doe</h4>
+                          <p style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Interior Designer</p>
+                      </div>
+                     
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                  <div class="team-item">
+                      <div class="team-img">
+                          <img src="https://themewagon.github.io/builerz/img/team-4.jpg" alt="Team Image" style="border: 2px solid black; width: 250px; height: 300px;" class="image">
+                      </div>
+                      <div class="team-text">
+                          <h4 style="text-align: center;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Josh Dunn</h4>
+                          <p style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Painter</p>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> -->
+  <div class="section-header text-center">
+    <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-decoration: underline; ">Meet Our Engineers</h2>
+</div>
+ <div class="row" style="margin-top: 40px;">
+    <div class="column">
+      <div class="card">
+        <img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jane" style="width:70%;padding-top: 10px; margin-left: 55px; border-radius: 12px;">
+        <div class="container">
+          <h2>Jane Doe</h2>
+          <p class="title">CEO &amp; Founder</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>example@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="https://www.w3schools.com/w3images/team2.jpg" alt="Mike" style="width:70%;padding-top: 10px; margin-left: 55px; border-radius: 12px;">
+        <div class="container">
+          <h2>Mike Ross</h2>
+          <p class="title">Art Director</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>example@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="https://www.w3schools.com/w3images/team3.jpg" alt="John" style="width:70%;padding-top: 10px; margin-left: 55px; border-radius: 12px;">
+        <div class="container">
+          <h2>John Doe</h2>
+          <p class="title">Designer</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>example@example.com</p>
+          <p><button class="button" >Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4 style="margin-left: 30px;">Company</h4>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Interior Gallery</a></li>
+              <li><a href="">Our Projects</a></li>
+              <li><a href="">Contacts</a></li>
+            </ul>
+          </div> 
+          <div class="footer-col">
+            <h4 style="margin-left: 30px;">Our Services</h4>
+            <ul>
+              <li><a href="">Architectural Designing</a></li>
+              <li><a href="">Interior Designing</a></li>
+              <li><a href="">Turkey Construction</a></li>
+              <li><a href="">Home & Office Interior Designers &</a></li>
+              <li><a href="">Best Interior Firms In Calicut,</a></li>
+              <li><a href="">Malappuram</a></li>
+
+            </ul>
+          </div> 
+          <div class="footer-col">
+            <h4 style="margin-left: 30px;">Contact Details</h4>
+            <ul>
+              <li style="list-style:none;">EVENS Construction (P) LTD.</li>
+                <li>Aisha Building, Irinjalakuda,</li>
+                <li>Thrissur , Kerala - India</li>
+                <li>Tel: 0091- 480 - 2833738</li>
+                <li>Mob: 8086600066, 8086611166</li>
+                <li>E-mail: info@evensconstruction.com</li>
+                
+                <li>Evens Construction Pvt Ltd GPS</li>
+            </ul>
+          </div> 
+          <div class="footer-col">
+            <h4 style="margin-left: 30px;">Follow Us</h4>
+            <div class="social-links" style="margin-left: 30px;">
+              <a href=""><i class="fab fa-facebook"></i></a>
+              <a href=""><i class="fab fa-twitter"></i></a>
+              <a href=""><i class="fab fa-instagram"></i></a>
+              <a href=""><i class="fab fa-linkedin-in"></i></a>
+              <div style="margin-left: 20px;">
+</div>                
+</div>
+          </div> 
+        </div>
+      </div>
+    </footer>
+
+
+</body>
+</html>
